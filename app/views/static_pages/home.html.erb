@@ -1,1 +1,4 @@
 <p>This is our home page</p>
+<% if user_signed_in? %>
+  <%= link_to "User logs", "user_logs#index"%>
+<% end %>

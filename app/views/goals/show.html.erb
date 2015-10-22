@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @goal.content %>
+</p>
+
+<p>
+  <strong>Deadline:</strong>
+  <%= @goal.deadline %>
+</p>
+
+<p>
+  <strong>Days left:</strong>
+  <% @days_left = @goal.deadline - Time.zone.now %>
+  <% if @days_left > 0 %>
+   <%= @days_left.to_i / 86400  %> days 
+   <%= Time.at(@days_left.to_i % 86400).utc.strftime("%H:%M") %>
+  <% else %>
+    miss a deadline
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_goal_path(@goal) %> |
+<%= link_to 'Back', goals_path %>

@@ -1,0 +1,15 @@
+<% provide :title, @user.name %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="stats">
+      <h1><%= @user.name %></h1>
+      <%= render "stats" %>
+      <%= render "follow_form" %>
+      
+    </section>
+    
+  </aside>
+
+</div>
+<br>
+<%= link_to "Home", root_path %>

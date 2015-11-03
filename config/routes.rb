@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
+#  get 'users/show'
+
+  get 'friends/create'
+
   resources :goals
   resources :user_logs
   root 'static_pages#home'
-  
   devise_for :users
+  resources :users, only: [:show, :index]
+  resources :friends, only: [:create,:destroy,:update]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if !@is_me
       @status = current_user.status_with @user.id
       @friend = Friend.where(user_id: current_user.id, friend_id:@user.id).try(:first) ||
-        Friend.where(user_id: @user_id, friend_id: current_user.id).try(:first)
+        Friend.where(user_id: @user.id, friend_id: current_user.id).try(:first)
     end
   end
 end

@@ -26,10 +26,10 @@
   <%= hidden_field_tag :friend_id, @user.id %> 
   <%= submit_tag "Remove request" %>
 <% end %>
-<% when :requested%>
+<% when :be_requested%>
 <h4>Be Requested</h4>
 <%= form_tag "/friends/#{@friend.id}", method: :put  do %>
-  <%= hidden_field_tag :id, @friend.id%>
+  <%= hidden_field_tag :id, @friend.id %>
   <%= hidden_field_tag :friend_id, @user.id%>
   <%= submit_tag "Accept" %>
 <% end %>
